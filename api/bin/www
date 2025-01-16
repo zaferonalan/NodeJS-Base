@@ -11,13 +11,13 @@ var http = require('http');
 
 // ! Database import
 const Database = require("../db/Database")
-const { CONNECTION_STRING } = require("../config");
+const { CONNECTION_STRING,PORT } = require("../config");
 
 /**
  * Get port from environment and store in Express.
  */
-
-var port = normalizePort(process.env.PORT || '3000');
+// ! PORT config'ten ALINDI
+var port = normalizePort(PORT);
 app.set('port', port);
 
 /**
