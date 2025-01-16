@@ -4,9 +4,14 @@
  * Module dependencies.
  */
 
+
 var app = require('../app');
 var debug = require('debug')('api:server');
 var http = require('http');
+
+// ! Database import
+const Database = require("../db/Database")
+const { CONNECTION_STRING } = require("../config");
 
 /**
  * Get port from environment and store in Express.
@@ -87,4 +92,7 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+
+  // ! Database Connect
+  new Database().connect({CONNECTION_STRING})
 }
