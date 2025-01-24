@@ -11,13 +11,12 @@ const schema = mongoose.Schema({
     },
     created_by: {
         type: mongoose.SchemaTypes.ObjectId,
-        required: true
     }
 },{
     versionKey: false,
     timestamps: {
         createdAt: "created_at",
-        updateAt: "updated_at"
+        updatedAt: "updated_at"
     }
 })
 
